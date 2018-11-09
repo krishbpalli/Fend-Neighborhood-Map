@@ -1,32 +1,109 @@
-.App {
+/* .App {
   text-align: center;
 }
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 80px;
 }
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
   color: white;
 }
+.App-title {
+  font-size: 1.5em;
+}
+.App-intro {
+  font-size: large;
+}
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+} */
 
-.App-link {
-  color: #61dafb;
+#map{
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.list {
+  background-color: blue;
+  color: lightgray;
+  padding: 10px 0;
+  position: relative;
+}
+
+.list .title {
+     font-size: 30px;
+    font-weight: bold;
+    padding-left: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+.list .search {
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 2px;
+    outline:none;
+}
+
+.list .button{
+    padding: 8px;
+    background: #d3d3d3;
+    color: blue;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 1px;
+}
+
+.list-search {
+  display: flex;
+  flex-flow: wrap;
+  margin: auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.header{
+font-weight: bold;
+text-align: center;
+}
+
+.main-location {
+    position: absolute;
+    z-index: 1;
+    margin: 10px 0px 0px 0px;
+    list-style: none;
+    padding: 0px 0px;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height:100vh;
+    max-width:40%;
+}
+
+.main-location li {
+    padding: 5px;
+    background: #000000;
+    color: #a6a6a6;
+    outline:none;
+    border-bottom: 1px solid #070707;
+}
+
+.main-location li:hover {
+    cursor: pointer;
+    background: lightgray;
+    color: #000000;
+}
+
+@media screen and (max-width: 460px){
+  .field {
+    order:2;
   }
-  to {
-    transform: rotate(360deg);
+  .title {
+    padding-bottom: 5px;
   }
 }
