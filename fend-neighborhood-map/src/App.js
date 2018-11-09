@@ -22,9 +22,11 @@ componentDidMount(){
 
 
   renderMap = () => {
-  this.loadMap("https://maps.googleapis.com/maps/api/js?key=AIzaSyAiN4GD7AI98ad1v-ANtUGdLZODwkSPEE4&callback=initMap")
+  this.loadMap("https://maps.googleapis.com/maps/api/js?key=your-api-key&callback=initMap")
 window.initMap = this.initMap
 }
+
+
 
 getVenues = () => {
   const endPoint = "https://api.foursquare.com/v2/venues/explore?"
@@ -65,13 +67,14 @@ openInfoWindow = (marker, place) => {
         this.map = new window.google.maps.Map(document.getElementById('map'), {
           center:{ lat: 33.749249 ,lng:-84.387314},
           zoom: 11
+
       })
       this.setState({ map: this.map })
       //create an infoWindow
       let infoWindow = new window.google.maps.InfoWindow()
       this.setState({ infoWindow })
 
-      //display dinamic markers
+      //display dynamic markers
       let markers = this.state.venues.map(myVenue => {
 
       //create a marker
@@ -144,11 +147,17 @@ openInfoWindow = (marker, place) => {
         script.src = url
         script.async = true
         script.defer = true
-        script.setAttribute('onerror', `errorMapLoad()`)
+        //script.setAttribute('onerror', 'errorMapLoad()')//
+        window.gm_authFailure = () => {
+     alert('ERROR!! \nFailed to get Google map.')
+     console.log('ERROR!! \nFailed to get Google map.');
+    };
         document.body.appendChild(script)
       }
 
-         render() {
+
+
+render() {
          //console.log(this.venues)
 
           return (

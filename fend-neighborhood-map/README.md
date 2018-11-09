@@ -4,8 +4,13 @@ Neighborhood map using React shows hospitals in Atlanta city.
 ## Instructions
 * Create project from scratch using npm init react-app your-project-name.
 * Change directory to your-project-name.
-* run npm start.
+* To run the app in development mode
+   run npm start.
 * then the browser will open http://localhost:3000
+* To run the app in production mode
+  npm run build
+  serve -s build
+* then visit http://localhost:5000
 
 ## Project Overview
 * This project is a single page application featuring a map of hospitals in Atlanta .
